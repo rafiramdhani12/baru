@@ -31,6 +31,9 @@ export const Menu = (props) => {
           <MenuButton label="Skills" onClick={() => onSectionChange(1)} />
           <MenuButton label="Projects" onClick={() => onSectionChange(2)} />
           <MenuButton label="Contact" onClick={() => onSectionChange(3)} />
+          <a href="https://rafiramdhani.vercel.app/">
+            <MenuButton label="2D" />
+          </a>
         </div>
       </div>
     </>
