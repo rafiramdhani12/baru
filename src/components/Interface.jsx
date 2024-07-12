@@ -127,10 +127,6 @@ const languages = [
     title: "english",
     level: 40,
   },
-  {
-    title: "japan",
-    level: 10,
-  },
 ];
 
 const SkillsSection = () => {
@@ -139,51 +135,18 @@ const SkillsSection = () => {
     <Section>
       <motion.div whileInView={"visible"}>
         <h2 className="text-3xl md:text-5xl font-bold text-white">Skills</h2>
-        <div className=" mt-8 space-y-4">
+        <div className="mt-8 flex flex-col space-y-4 text-center">
           {skills.map((skill, index) => (
             <div className="w-full md:w-64" key={index}>
-              <motion.h3
-                className="text-lg mdtext-xl font-bold text-white"
-                initial={{
-                  opacity: 0,
-                }}
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      duration: 1,
-                      delay: 1 + index * 0.2,
-                    },
-                  },
-                }}>
-                {skill.title}
-              </motion.h3>
-              <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                <motion.div
-                  className="h-full bg-indigo-500 rounded-full "
-                  style={{width: `${skill.level}%`}}
-                  initial={{
-                    scaleX: 0,
-                    originX: 0,
-                  }}
-                  variants={{
-                    visible: {
-                      scaleX: 1,
-                      transition: {
-                        duration: 1,
-                        delay: 1 + index * 0.2,
-                      },
-                    },
-                  }}
-                  // whileInView={{
-                  //   scaleX: 1,
-                  // }}
-                  // transition={{
-                  //   duration: 1,
-                  //   delay: 1 + index * 0.2,
-                  // }}
-                />
-              </div>
+              <motion.div
+                className="bg-slate-300 p-4 rounded-lg shadow-md"
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                transition={{duration: 1, delay: 2 + index * 0.2}}>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">
+                  {skill.title}
+                </h3>
+              </motion.div>
             </div>
           ))}
         </div>
@@ -191,11 +154,11 @@ const SkillsSection = () => {
           <h2 className="text-3xl md:text-5xl font-bold mt-10 text-white">
             Languages
           </h2>
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 space-y-4 flex flex-col text-center">
             {languages.map((lng, index) => (
               <div className="w-full md:w-64" key={index}>
                 <motion.h3
-                  className="text-lg md:text-xl font-bold text-white"
+                  className="text-lg md:text-xl font-bold text-gray-800 bg-slate-300 p-4 rounded-lg"
                   initial={{
                     opacity: 0,
                   }}
@@ -210,25 +173,6 @@ const SkillsSection = () => {
                   }}>
                   {lng.title}
                 </motion.h3>
-                <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
-                  <motion.div
-                    className="h-full bg-indigo-500 rounded-full "
-                    style={{width: `${lng.level}%`}}
-                    initial={{
-                      scaleX: 0,
-                      originX: 0,
-                    }}
-                    variants={{
-                      visible: {
-                        scaleX: 1,
-                        transition: {
-                          duration: 1,
-                          delay: 2 + index * 0.2,
-                        },
-                      },
-                    }}
-                  />
-                </div>
               </div>
             ))}
           </div>
